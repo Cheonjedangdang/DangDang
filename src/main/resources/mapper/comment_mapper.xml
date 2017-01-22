@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.dangdangcompany.dangdang.comment.dao.CommentDAO">
+ 	<insert id="insert" parameterType="com.dangdangcompany.dangdang.comment.vo.CommentVO">
+ 		<selectKey keyProperty="commentId" resultType="int" order="BEFORE">
+    		SELECT COMMENT_SEQ.NEXTVAL FROM DUAL
+ 	 	</selectKey>
+ 		INSERT INTO BOARDCOMMENT (COMMENTID, BOARDID, CONTENT, USERID) 
+ 		VALUES(#{commentId}, #{boardId}, #{content}, #{userId})
+ 	</insert>
+	<select id="select" resultType="com.dangdangcompany.dangdang.comment.vo.CommentVO">
+ 		SELECT
+ 			U.USERID,
+ 			U.NICKNAME,
+ 			C.CONTENT,
+ 			C.UP,
+ 			C.DOWN,
+ 			C.BOARDID,
+ 			C.TIME,
+ 			C.COMMENTID
+ 		FROM
+ 			BOARDUSER U, BOARDCOMMENT C
+ 		WHERE
+ 			U.USERID = C.USERID
+ 			AND
+ 			C.BOARDID = #{param1} ORDER BY TIME ASC
+ 	</select>
+ 	<select id="selectComment" resultType="com.dangdangcompany.dangdang.comment.vo.CommentVO">
+ 		SELECT
+ 			U.USERID,
+ 			U.NICKNAME,
+ 			C.CONTENT,
+ 			C.UP,
+ 			C.DOWN,
+ 			C.BOARDID,
+ 			C.TIME,
+ 			C.COMMENTID
+ 		FROM
+ 			BOARDUSER U, BOARDCOMMENT C
+ 		WHERE
+ 			U.USERID = C.USERID
+ 			AND
+ 			C.COMMENTID = #{param1}
+ 	</select>
+ 	<select id="selectAll" resultType="com.dangdangcompany.dangdang.comment.vo.CommentVO">
+ 		SELECT * FROM BOARDUSER U, BOARDCOMMENT C WHERE U.USERID = C.USERID
+ 	</select>
+ </mapper>	

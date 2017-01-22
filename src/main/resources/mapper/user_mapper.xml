@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.dangdangcompany.dangdang.user.dao.UserDAO">
+	<insert id="insert" parameterType="com.dangdangcompany.dangdang.user.dto.UserDTO">
+ 		INSERT INTO BOARDUSER (USERID, USERPW, EMAIL, NICKNAME) 
+ 		VALUES(#{userId}, #{userPw},#{email},#{nickname})
+ 	</insert>
+	<select id="selectId" resultType="com.dangdangcompany.dangdang.user.dto.UserDTO">
+ 		SELECT * FROM BOARDUSER WHERE USERID = #{param1}
+ 	</select>
+ 	<select id="selectNickname" resultType="com.dangdangcompany.dangdang.user.dto.UserDTO">
+ 		SELECT * FROM BOARDUSER WHERE NICKNAME = #{param1}
+ 	</select>
+ 	<select id="login" resultType="com.dangdangcompany.dangdang.user.dto.UserDTO">
+ 		SELECT * FROM BOARDUSER WHERE USERID = #{param1} AND USERPW = #{param2}
+ 	</select>
+	
+ </mapper>	

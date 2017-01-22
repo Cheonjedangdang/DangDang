@@ -1,0 +1,5 @@
+@CHARSET "utf-8";
+.dropdown-menu li:hover {
+    cursor: pointer;
+    visibility: visible;
+}
