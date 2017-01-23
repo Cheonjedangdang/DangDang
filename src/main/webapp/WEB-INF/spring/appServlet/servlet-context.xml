@@ -10,7 +10,10 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<interceptors>
 		<interceptor>
-           <mapping path="/write"/>
+           <mapping path="/**"/>
+           <exclude-mapping path="/"/>
+           <exclude-mapping path="/home"/>
+           <exclude-mapping path="/resources/**"/>
            <beans:bean class="com.dangdangcompany.dangdang.common.interceptor.Interceptor"/>
         </interceptor>
 	</interceptors>
