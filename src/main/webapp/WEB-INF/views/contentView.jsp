@@ -21,6 +21,7 @@
 		<div class="panel-body">
 			${list.content}
 		</div>
+		
 	</div>
 	<div>
 		댓글목록
@@ -34,8 +35,19 @@
 			<input type="hidden" name="boardId" class="boardId" value="${list.boardId}"/>
 			<input type="hidden" name="userId" class="userId" value="${user.userId}"/>
 			<div class="pull-right"><input type = "button" value="등록" class="btnc"/></div>
-		</form>
+		</form><br/><br/>
 	</div>
+	
+	<div align="center">
+		<button type="button" class="btn btn-success">
+		  <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 추천
+		</button>
+		
+		<button type="button" class="btn btn-danger">
+		  <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 비추
+		</button>
+	</div>
+	
 	
 	<table class="table table-striped">
 		<tr>

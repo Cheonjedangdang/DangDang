@@ -15,11 +15,11 @@ public class PagingDTO {
 	private int startRowNum; // 게시글 조회 쿼리에 들어갈 row 시작점
 	private int endRowNum; // 게시글 조회 쿼리에 들어갈 row 끝점
 	private int categoryId;
-	
+	private int pageGroup;
 	public PagingDTO(){}
 	public PagingDTO(int pageSize, int firstPageNo, int prevPageNo, int startPageNo, int pageNo, int endPageNo,
 			int nextPageNo, int finalPageNo, int totalCount, int blockSize, int startRowNum, int endRowNum,
-			int categoryId) {
+			int categoryId, int pageGroup) {
 		super();
 		this.pageSize = pageSize;
 		this.firstPageNo = firstPageNo;
@@ -34,6 +34,7 @@ public class PagingDTO {
 		this.startRowNum = startRowNum;
 		this.endRowNum = endRowNum;
 		this.categoryId = categoryId;
+		this.pageGroup = pageGroup;
 	}
 
 
@@ -147,6 +148,12 @@ public class PagingDTO {
 				+ nextPageNo + ", finalPageNo=" + finalPageNo + ", totalCount=" + totalCount + ", blockSize="
 				+ blockSize + ", startRowNum=" + startRowNum + ", endRowNum=" + endRowNum + ", categoryId=" + categoryId
 				+ "]";
+	}
+	public int getPageGroup() {
+		return pageGroup;
+	}
+	public void setPageGroup(int pageGroup) {
+		this.pageGroup = pageGroup;
 	}
 	
 }

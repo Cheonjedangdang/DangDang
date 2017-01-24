@@ -32,7 +32,7 @@
 	<nav>
 	  <ul class="pagination">
 	    <li>
-	      <a href="#" aria-label="Previous">
+	      <a href="boardList?categoryId=${categoryId}&pageNo=${page.endPageNo-5}" aria-label="Previous">
 	        <span aria-hidden="true">&laquo;</span>
 	      </a>
 	    </li>
@@ -42,7 +42,7 @@
 	    </c:forEach>
 	 
 	    <li>
-	      <a href="#" aria-label="Next">
+	      <a href="boardList?categoryId=${categoryId}&pageNo=${page.endPageNo+1}" aria-label="Next">
 	        <span aria-hidden="true">&raquo;</span>
 	      </a>
 	    </li>
