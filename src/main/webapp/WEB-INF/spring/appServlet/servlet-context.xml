@@ -15,6 +15,7 @@
            <exclude-mapping path="/boardList"/>
            <exclude-mapping path="/titleClick"/>
            <exclude-mapping path="/home"/>
+           <exclude-mapping path="/regist"/>
            <exclude-mapping path="/resources/**"/>
            <beans:bean class="com.dangdangcompany.dangdang.common.interceptor.Interceptor"/>
         </interceptor>

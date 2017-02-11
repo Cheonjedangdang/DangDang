@@ -39,13 +39,16 @@
 	</div>
 	
 	<div align="center">
-		<button type="button" class="btn btn-success">
-		  <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 추천
-		</button>
-		
-		<button type="button" class="btn btn-danger">
-		  <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 비추
-		</button>
+		<form>
+			<input type="hidden" name="boardId" class="boardId" value="${list.boardId}"/>
+			<input type="hidden" name="userId" class="userId" value="${user.userId}"/>
+			<button type="button" class="btn btn-success btnUp">
+		  	<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 추천<span class="upCount"></span>
+			</button>
+			<button type="button" class="btn btn-danger btnDown">
+		  	<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 비추<span class="downCount"></span>
+			</button>
+		</form>
 	</div>
 	
 	
@@ -68,5 +71,68 @@
 				</tr>
 		</c:forEach>
 	</table>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$.ajax({
+					url : '/dangdang/upCount',
+					type : 'post',
+					data:{boardId : $('.boardId').val()},
+					success : function(response){
+						if(response.로그인=="x"){
+							swal('','로그인후이용ㄱ','error');
+						}
+						else{
+							$('.upCount').html(response.updownCount);	
+						}
+						
+					}
+				});		
+				$.ajax({
+					url : '/dangdang/downCount',
+					type : 'post',
+					data:{boardId : $('.boardId').val()},
+					success : function(response){
+						if(response.로그인=="x"){
+							swal('','로그인후이용ㄱ','error');
+						}
+						else{
+							$('.downCount').html(response.updownCount);	
+						}
+					}
+				});		
+				
+			$('.btnUp').click(function(){
+				$.ajax({
+					url : '/dangdang/btnUp',
+					type : 'post',
+					data:{userId : $('.userId').val(), boardId : $('.boardId').val()},
+					success : function(response){
+						if(response.로그인=="x"){
+							swal('','로그인후이용ㄱ','error');
+						}
+						else{
+							$('.upCount').html(response.updownCount);	
+						}
+					}
+				});
+			});
+			$('.btnDown').click(function(){
+				$.ajax({
+					url : '/dangdang/btnDown',
+					type : 'post',
+					data:{userId : $('.userId').val(), boardId : $('.boardId').val()},
+					success : function(response){	
+						if(response.로그인=="x"){
+							swal('','로그인후이용ㄱ','error');
+						}
+						else{
+							$('.downCount').html(response.updownCount);	
+						}
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

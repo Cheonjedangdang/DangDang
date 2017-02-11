@@ -15,7 +15,7 @@ public class Interceptor extends HandlerInterceptorAdapter{
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		
+
 		/* 응답이 페이지이동이 아니라면 로그인 검사하지 않음 */
 		if(((HandlerMethod)handler).getMethod().getAnnotation(ResponseBody.class) != null) return true;
 		

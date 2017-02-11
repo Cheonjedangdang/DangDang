@@ -14,17 +14,20 @@
 			<th>번호</th>
 			<th>제목</th>
 			<th>글쓴이</th>
-			<th></th>
+			<th>조회수</th>
 		</tr>
 		<c:forEach items="${pageList}" var="item">
 			<tr>
 				<td>${item.boardId}</td>
 				<td><a href="titleClick?boardId=${item.boardId}">${item.title}</a></td>
 				<td>${item.nickname}</td>
-				<td><c:if test="">
-					<input type="button" class="btn btn-danger" value="삭제"/>
-					<input type="button" class="btn btn-primary" value="수정"/>
-				</c:if></td>
+				<td>
+					${item.hit}
+					<c:if test="">
+						<input type="button" class="btn btn-danger" value="삭제"/>
+						<input type="button" class="btn btn-primary" value="수정"/>
+					</c:if>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

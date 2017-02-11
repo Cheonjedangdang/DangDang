@@ -11,6 +11,10 @@
  		INSERT INTO BOARDMAIN (BOARDID, CATEGORYID, TITLE, CONTENT, USERID) 
  		VALUES(BOARD_SEQ.NEXTVAL, #{categoryId}, #{title},#{content}, #{userId})
  	</insert>
+ 	<update id="hitUpdate" parameterType="com.dangdangcompany.dangdang.main.vo.BoardVO">
+ 		UPDATE BOARDMAIN SET HIT = HIT + 1
+ 								WHERE BOARDID = #{boardId} 
+ 	</update>
  	<select id="select" resultType="com.dangdangcompany.dangdang.main.vo.BoardVO">
  		SELECT
  			U.USERID,
@@ -21,7 +25,8 @@
  			M.DOWN,
  			M.CATEGORYID,
  			M.BOARDID,
- 			M.TIME
+ 			M.TIME,
+ 			M.HIT
  		FROM
  			BOARDUSER U, BOARDMAIN M
  		WHERE
@@ -55,7 +60,8 @@
 		 			M.DOWN,
 		 			M.CATEGORYID,
 		 			M.BOARDID,
-		 			M.TIME
+		 			M.TIME,
+		 			M.HIT
  			 	 FROM 
  			 	 	BOARDUSER U, BOARDMAIN M
  			 	 WHERE 

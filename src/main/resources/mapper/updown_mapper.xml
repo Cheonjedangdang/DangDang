@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.dangdangcompany.dangdang.updown.dao.UpdownDAO">
+	<insert id="insert" parameterType="com.dangdangcompany.dangdang.updown.dto.UpdownDTO">
+		INSERT INTO BOARDUPDOWN (USERID, BOARDID, UP, DOWN) 
+ 		VALUES(#{userId}, #{boardId}, #{up},#{down})
+	</insert>
+	<select id="selectAll" resultType="com.dangdangcompany.dangdang.updown.dto.UpdownDTO">
+ 		SELECT * FROM BOARDUPDOWN
+ 	</select>
+ 	<select id="checkId" resultType="com.dangdangcompany.dangdang.updown.dto.UpdownDTO">
+ 		SELECT * FROM BOARDUPDOWN WHERE USERID = #{param1} AND BOARDID = #{param2}
+ 	</select>
+ 	<select id="upCount" resultType="int">
+ 		SELECT COUNT(*) FROM BOARDUPDOWN WHERE BOARDID = #{param1} AND UP = 1
+ 	</select>
+ 	<select id="downCount" resultType="int">
+ 		SELECT COUNT(*) FROM BOARDUPDOWN WHERE BOARDID = #{param1} AND DOWN = 1
+ 	</select>
+ </mapper>	

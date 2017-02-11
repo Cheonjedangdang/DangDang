@@ -12,9 +12,10 @@ public class BoardVO {
 	private int down;
 	private Timestamp time;
 	private String nickname;
+	private int hit;
 	public BoardVO(){}
 	public BoardVO(int boardId, int categoryId, String userId, String title, String content, int up, int down,
-			Timestamp time, String nickname) {
+			Timestamp time, String nickname, int hit) {
 		super();
 		this.boardId = boardId;
 		this.categoryId = categoryId;
@@ -25,6 +26,7 @@ public class BoardVO {
 		this.down = down;
 		this.time = time;
 		this.nickname = nickname;
+		this.hit = hit;
 	}
 	public int getBoardId() {
 		return boardId;
@@ -80,11 +82,17 @@ public class BoardVO {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+	public int getHit(){
+		return hit;
+	}
+	public void setHit(int hit){
+		this.hit = hit;
+	}
 	@Override
 	public String toString() {
 		return "BoardVO [boardId=" + boardId + ", categoryId=" + categoryId + ", userId=" + userId + ", title=" + title
 				+ ", content=" + content + ", up=" + up + ", down=" + down + ", time=" + time + ", nickname=" + nickname
-				+ "]";
+				+ ", hit=" + hit + "]";
 	}
 	
 }

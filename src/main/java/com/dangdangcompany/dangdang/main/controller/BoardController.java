@@ -73,6 +73,7 @@ public class BoardController {
 	@RequestMapping("titleClick")
 	public String contentView(BoardVO vo, Model model)
 	{
+		boardService.setHit(vo);
 		BoardVO selectedVo = boardService.contentView(vo.getBoardId());
 		model.addAttribute("boardList", boardService.categoryBoard(selectedVo.getCategoryId()));
 		model.addAttribute("list", selectedVo);

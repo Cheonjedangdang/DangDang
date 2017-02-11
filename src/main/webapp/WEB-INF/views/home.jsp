@@ -29,8 +29,8 @@
 						<input type="password" placeholder="비밀번호" name="userPw" class="userPw"/>
 						<input type="checkbox"/>로그인유지			
 					</form>
-					<a href="regist" onclick="window.open(this.href, '회원가입','top = 50,left=100,width=600,height=650,location=yes');return false;">회원가입</a>
-					<a href="regist" onclick="window.open(this.href, '회원가입','top = 50,left=100,width=600,height=650,location=yes');return false;">ID/PW찾기</a>
+					<a href="<c:url value="/regist"/>" onclick="window.open(this.href, '회원가입','top = 50,left=100,width=600,height=650,location=yes');return false;">회원가입</a>
+					<a href="<c:url value="/regist"/>" onclick="window.open(this.href, '회원가입','top = 50,left=100,width=600,height=650,location=yes');return false;">ID/PW찾기</a>
 				</div>
 			</c:if>
 				<c:if test="${not empty sessionScope.user}">

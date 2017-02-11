@@ -12,6 +12,7 @@ import com.dangdangcompany.dangdang.main.vo.BoardVO;
 public interface BoardDAO {
 	void insert(BoardDTO board);
 	void insert2(BoardVO board);
+	void hitUpdate(BoardVO board);
 	BoardVO select(int boardId);
 	ArrayList<BoardDTO> selectAll();
 	ArrayList<BoardDTO> selectCategory(int boardcategoryId);

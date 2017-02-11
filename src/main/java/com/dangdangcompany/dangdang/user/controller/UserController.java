@@ -29,7 +29,8 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping("/regist")
-	public String sign(){		
+	public String sign(){
+		logger.info("{}", "½Ã@¹ß¿Ö ¾È¶ä");
 		return "regist";
 	}
 	
