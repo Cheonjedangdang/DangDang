@@ -9,4 +9,7 @@
  	<select id="selectType" resultType="com.dangdangcompany.dangdang.category.dto.CategoryDTO">
  		SELECT * FROM BOARDCATEGORY WHERE TYPE = #{param1}
  	</select>
+ 	<select id="select" resultType="com.dangdangcompany.dangdang.category.dto.CategoryDTO">
+ 		SELECT * FROM BOARDCATEGORY WHERE BOARDCATEGORYID = #{param1}
+ 	</select>
  </mapper>	

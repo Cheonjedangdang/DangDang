@@ -1,23 +1,23 @@
 $(document).ready(function(){
 	$.ajax({
-		url : '/dangdang/comicCategory',
+		url : '/comicCategory',
 		type : 'post',
 		data:{},
 		success : function(response){
 			$.each(response.list,function(index,data){
-				$('.menu2').append('<li><a href=/dangdang/boardList?categoryId='+data.boardcategoryId+'>'+data.name+'</a></li>');
+				$('.menu2').append('<li><a href=/boardList?categoryId='+data.boardcategoryId+'>'+data.name+'</a></li>');
 
 			});
 		}
 	});
 	
 	$.ajax({
-		url : '/dangdang/gameCategory',
+		url : '/gameCategory',
 		type : 'post',
 		data:{},
 		success : function(response){
 			$.each(response.list,function(index,data){
-				$('.menu3').append('<li><a href=/dangdang/boardList?categoryId='+data.boardcategoryId+'>'+data.name+'</a></li>');
+				$('.menu3').append('<li><a href=/boardList?categoryId='+data.boardcategoryId+'>'+data.name+'</a></li>');
 			
 			});
 		}

@@ -1,7 +1,7 @@
 	$(document).ready(function(){
 		$('.btnc').click(function(){
 			$.ajax({
-				url : '/dangdang/commentc',
+				url : '/commentc',
 				type : 'post',
 				data:{boardId : $('.boardId').val(), userId : $('.userId').val(), content : $('.content').val()},
 				success : function(response){
@@ -11,7 +11,7 @@
 			});
 		});
 		$.ajax({
-			url : '/dangdang/commentView',
+			url : '/commentView',
 			type : 'post',
 			data:{boardId : $('.boardId').val()},
 			success : function(response){

@@ -75,7 +75,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 				$.ajax({
-					url : '/dangdang/upCount',
+					url : '/upCount',
 					type : 'post',
 					data:{boardId : $('.boardId').val()},
 					success : function(response){
@@ -89,7 +89,7 @@
 					}
 				});		
 				$.ajax({
-					url : '/dangdang/downCount',
+					url : '/downCount',
 					type : 'post',
 					data:{boardId : $('.boardId').val()},
 					success : function(response){
@@ -104,7 +104,7 @@
 				
 			$('.btnUp').click(function(){
 				$.ajax({
-					url : '/dangdang/btnUp',
+					url : '/btnUp',
 					type : 'post',
 					data:{userId : $('.userId').val(), boardId : $('.boardId').val()},
 					success : function(response){
@@ -119,7 +119,7 @@
 			});
 			$('.btnDown').click(function(){
 				$.ajax({
-					url : '/dangdang/btnDown',
+					url : '/btnDown',
 					type : 'post',
 					data:{userId : $('.userId').val(), boardId : $('.boardId').val()},
 					success : function(response){	

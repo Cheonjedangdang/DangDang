@@ -10,7 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.2.1/sweetalert2.min.css">
 	<script src="https://cdn.jsdelivr.net/sweetalert2/6.2.1/sweetalert2.min.js"></script>
-	<script type="text/javascript" src="/dangdang/resources/js/regist.js"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/regist.js"/>"></script>
 <title>회원가입</title>
 </head>
 <body>

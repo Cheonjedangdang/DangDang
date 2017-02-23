@@ -10,13 +10,12 @@
       	<meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;"/>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.2.1/sweetalert2.min.css">
 		<script src="https://cdn.jsdelivr.net/sweetalert2/6.2.1/sweetalert2.min.js"></script>
-		<script type="text/javascript" src="/dangdang/resources/js/main.js"></script>
-		<link rel="stylesheet" type="text/css" href="/dangdang/resources/css/header.css">
-		<script type="text/javascript" src="/dangdang/resources/js/comment.js"></script>
+		<script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/header.css"/>">
+		<script type="text/javascript" src="<c:url value="/resources/js/comment.js"/>"></script>
 		<decorator:head/>
       <title><decorator:title default="당당 ~ DangDang~"/></title>
    </head>

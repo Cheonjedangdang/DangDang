@@ -23,4 +23,7 @@ public class CategoryService {
 	public ArrayList<CategoryDTO> CategoryGameList(){
 		return categoryDao.selectType(2);
 	}
+	public CategoryDTO getCategoryDetail(int categoryId) {
+		return categoryDao.select(categoryId);
+	}
 }

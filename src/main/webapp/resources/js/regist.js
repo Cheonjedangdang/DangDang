@@ -5,7 +5,7 @@
 			$('.checkId').click(function(){
 				console.log('클릭');
 				$.ajax({
-					url : '/dangdang/ajaxCheckId',
+					url : '/ajaxCheckId',
 					type : 'post',
 					data : { userId : $('.userId').val()},
 					success : function(response){
@@ -21,7 +21,7 @@
 			});
 			$('.checkNickname').click(function(){
 				$.ajax({
-					url : '/dangdang/ajaxCheckNickname',
+					url : '/ajaxCheckNickname',
 					type : 'post',
 					data : { nickname : $('.nickname').val()},
 					success : function(response){
@@ -38,7 +38,7 @@
 			$('.join').click(function(){
 				if(checkId==true&&checkNickname==true&&$('.userPw').val()==$('.checkPw').val()){
 					$.ajax({
-						url : '/dangdang/ajaxJoin',
+						url : '/ajaxJoin',
 						type : 'post',
 						data:{	userId : $('.userId').val(), 
 								userPw : $('.userPw').val(),

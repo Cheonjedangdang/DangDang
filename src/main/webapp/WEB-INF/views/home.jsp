@@ -5,8 +5,8 @@
 <head>
 	<!--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 	<script src="<c:url value="/resources/js/main.js" />"></script>  -->
-	 <link rel="stylesheet" type="text/css" href="/dangdang/resources/css/main.css">
-	<script type="text/javascript" src="/dangdang/resources/js/login.js"></script>
+	 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>">
+	<script type="text/javascript" src="<c:url value="/resources/js/login.js"/>"></script>
 </head>
 <body>
 		<div class="pull-left" style="width: 73%; margin-right:10px;">

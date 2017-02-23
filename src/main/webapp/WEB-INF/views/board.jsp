@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	게시판일세
+	<h1>${category.name} <small>게시판</small></h1>
 	<table class="table table-striped">
 		<tr>
 			<th>번호</th>
@@ -32,30 +32,31 @@
 		</c:forEach>
 	</table>
 	
-	<nav>
-	  <ul class="pagination">
-	    <li>
-	      <a href="boardList?categoryId=${categoryId}&pageNo=${page.endPageNo-5}" aria-label="Previous">
-	        <span aria-hidden="true">&laquo;</span>
-	      </a>
-	    </li>
-	    <c:forEach var="i" begin="${page.startPageNo}" end="${page.endPageNo}" step="1">
-	    	   <li><a href="boardList?categoryId=${categoryId}&pageNo=${i}">${i}</a></li>
-	    	   <li>${page.startPageNo},${page.endPageNo}</li>
-	    </c:forEach>
-	 
-	    <li>
-	      <a href="boardList?categoryId=${categoryId}&pageNo=${page.endPageNo+1}" aria-label="Next">
-	        <span aria-hidden="true">&raquo;</span>
-	      </a>
-	    </li>
-	  </ul>
-	</nav>
+	<div align="center">
+		<nav>
+		  <ul class="pagination">
+		    <li>
+		      <a href="boardList?category.categoryId=${category.boardcategoryId}&pageNo=${page.endPageNo-5}" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <c:forEach var="i" begin="${page.startPageNo}" end="${page.endPageNo}" step="1">
+		    	   <li><a href="boardList?category.categoryId=${category.boardcategoryId}&pageNo=${i}">${i}</a></li>
+		    </c:forEach>
+		 
+		    <li>
+		      <a href="boardList?category.categoryId=${category.boardcategoryId}&pageNo=${page.endPageNo+1}" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	</div>
 	
 	<div class="pull-right" style="width:10%">
 		<form action="write">
-			<input type="hidden" name="categoryId" value="${categoryId}"/>
-			<input type="submit" value="글쓰기"/>
+			<input type="hidden" name="categoryId" value="${category.boardcategoryId}"/>
+			<input type="submit" value="글쓰기" class="form-control"/>
 		</form>
 	</div>	
 </body>
