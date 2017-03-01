@@ -13,8 +13,31 @@
 				<div style="height:100px; border:1px solid black; margin-bottom:2px;">광고배너</div>
 				<div class="pull-left" style="width:68%; height:250px; padding:10px; margin-bottom:10px; background-color:green" >당당정보뉴스new</div>
 				<div class="pull-right" style="width:30%; height:250px; padding:10px; margin-bottom:10px; background-color:green">2017년 신작랭킹</div>
-				<div class="pull-left" style="width:50%; height:250px; padding:10px; margin-bottom:10px; border:1px solid black">
-					인기게시물 HOT
+				<div class="pull-left" style="width:50%; height:250px; padding:10px; margin-bottom:10px; border:1px solid black; overflow: scroll;">
+					<h5>인기게시물 HOT</h5>
+					<table class="table table-striped">
+						<c:forEach items="${hot}" var="item" begin="1" end="10" step="1">
+							<tr>
+								<td>
+									<c:if test ="${item.categoryId==1}"><c:out value="[원피스]"/></c:if>
+									<c:if test ="${item.categoryId==2}"><c:out value="[나루토]"/></c:if>
+									<c:if test ="${item.categoryId==3}"><c:out value="[블리치]"/></c:if>
+									<c:if test ="${item.categoryId==4}"><c:out value="[롤]"/></c:if>
+									<c:if test ="${item.categoryId==5}"><c:out value="[오버워치]"/></c:if>
+									<c:if test ="${item.categoryId==6}"><c:out value="[메이플]"/></c:if>
+								</td>
+								<td><a href="titleClick?boardId=${item.boardId}">${item.title}</a></td>
+								<td>${item.nickname}</td>
+								<td>
+									${item.hit}
+									<c:if test="">
+										<input type="button" class="btn btn-danger" value="삭제"/>
+										<input type="button" class="btn btn-primary" value="수정"/>
+									</c:if>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>	
 				</div>
 				<div class="pull-right" style="width:49%; height:250px;padding:10px; margin-bottom:10px; background-color:green">
 					베스트게시물 BEST

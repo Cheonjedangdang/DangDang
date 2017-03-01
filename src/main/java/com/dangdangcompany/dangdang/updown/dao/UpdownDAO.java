@@ -10,7 +10,7 @@ import com.dangdangcompany.dangdang.updown.dto.UpdownDTO;
 public interface UpdownDAO {
 	void insert(UpdownDTO board);
 	UpdownDTO checkId(String userId, int boardId);
-	ArrayList<UpdownDTO> selectAll(int boardId);
+	ArrayList<UpdownDTO> selectAll();
 	int upCount(int boardId);
 	int downCount(int boardId);
 }

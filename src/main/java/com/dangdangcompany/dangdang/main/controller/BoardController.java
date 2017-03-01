@@ -17,6 +17,9 @@ import com.dangdangcompany.dangdang.category.service.CategoryService;
 import com.dangdangcompany.dangdang.main.paging.PagingDTO;
 import com.dangdangcompany.dangdang.main.service.BoardService;
 import com.dangdangcompany.dangdang.main.vo.BoardVO;
+import com.dangdangcompany.dangdang.updown.dao.UpdownDAO;
+import com.dangdangcompany.dangdang.updown.dto.UpdownDTO;
+import com.dangdangcompany.dangdang.updown.service.UpdownService;
 import com.dangdangcompany.dangdang.user.dto.UserDTO;
 
 
@@ -31,6 +34,8 @@ public class BoardController {
 	@Autowired
 	private CategoryService categoryService;
 	
+	@Autowired
+	private UpdownService updownService;
 	/**
 	 * Home View
 	 * */
@@ -38,9 +43,9 @@ public class BoardController {
 	public ModelAndView main() {
 		ModelAndView mv = new ModelAndView("home");
 		
-		mv.addObject("news", null);
+		mv.addObject("hot", boardService.categoryBoard3());
 		mv.addObject("rank", null);
-		mv.addObject("hot", null);
+		mv.addObject("news", null);
 		mv.addObject("best", null);
 		
 		return mv;
@@ -72,6 +77,7 @@ public class BoardController {
 		model.addAttribute("pageList", boardService.p(pdto.getCategoryId(), pdto.getPageNo()));
 		model.addAttribute("page", boardService.pageSet(pdto.getCategoryId(), pdto.getPageNo()));
 		logger.info("{}", pdto.getPageNo());
+		model.addAttribute("updownList", updownService.selectAll());
 		return "board";
 	}
 	@RequestMapping("writec")
@@ -94,5 +100,15 @@ public class BoardController {
 		model.addAttribute("boardList", boardService.categoryBoard(selectedVo.getCategoryId()));
 		model.addAttribute("list", selectedVo);
 		return "contentView";
+	}
+	
+	@RequestMapping("search")
+	public String searchc(BoardVO vo, Model model)
+	{
+		boardService.setHit(vo);
+		BoardVO selectedVo = boardService.contentView(vo.getBoardId());
+		model.addAttribute("boardList", boardService.categoryBoard(selectedVo.getCategoryId()));
+		model.addAttribute("list", selectedVo);
+		return "board";
 	}
 }

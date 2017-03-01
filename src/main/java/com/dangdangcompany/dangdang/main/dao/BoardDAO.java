@@ -17,5 +17,6 @@ public interface BoardDAO {
 	ArrayList<BoardDTO> selectAll();
 	ArrayList<BoardDTO> selectCategory(int boardcategoryId);
 	ArrayList<BoardVO> selectCategory2(int boardcategoryId);
+	ArrayList<BoardVO> selectCategory3();
 	ArrayList<BoardVO> selectpaging(PagingDTO pdto);
 }

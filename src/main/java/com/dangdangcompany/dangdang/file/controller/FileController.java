@@ -29,7 +29,7 @@ public class FileController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 	
-	private static final String TEMP_FOLDER = "C:\\Users\\leehyungyu\\Desktop\\upload\\temp\\";
+	private static final String TEMP_FOLDER = "C:\\Users\\wkdtm\\Desktop\\uploadimg";
 	
 	@RequestMapping(value="uploadImage", method = RequestMethod.POST)
 	@ResponseBody

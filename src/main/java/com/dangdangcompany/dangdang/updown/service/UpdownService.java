@@ -1,6 +1,8 @@
 package com.dangdangcompany.dangdang.updown.service;
 
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,5 +45,8 @@ public class UpdownService {
 			return updownDao.downCount(boardId);
 		}
 		return updownDao.downCount(boardId);
+	}
+	public ArrayList<UpdownDTO> selectAll(){
+		return updownDao.selectAll();
 	}
 }

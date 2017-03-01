@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dangdangcompany.dangdang.main.dao.BoardDAO;
+import com.dangdangcompany.dangdang.main.dto.BoardDTO;
 import com.dangdangcompany.dangdang.main.paging.PagingDTO;
 import com.dangdangcompany.dangdang.main.vo.BoardVO;
 
@@ -78,5 +79,9 @@ public class BoardService {
 	}
 	public void setHit(BoardVO vo){
 		boardDao.hitUpdate(vo);
+	}
+	public ArrayList<BoardVO> categoryBoard3(){
+		logger.info("{}",boardDao.selectCategory3());
+		return boardDao.selectCategory3();
 	}
 }
