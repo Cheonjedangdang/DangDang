@@ -6,14 +6,14 @@
 <html>
 
 <body>
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<div class="clearfix">
 				<div class="pull-left">
-					${list.title} <br/>
-					${list.nickname}
+					<h3>${list.title}</h3>
+					<strong>${list.nickname}</strong>
 				</div>
-				<div class="pull-right">
+				<div class="pull-right" style="padding-top: 20px;">
 					${list.time}
 				</div>
 			</div>
@@ -24,9 +24,9 @@
 		
 	</div>
 	<div>
-		댓글목록
-		<ul class="comment-list">
-		</ul>
+		<h4>댓글목록</h4>
+		<table class="comment-list table">
+		</table>
 	</div>
 	<div>
 		의견을 남겨주세요~<br/>
@@ -38,7 +38,7 @@
 		</form><br/><br/>
 	</div>
 	
-	<div align="center">
+	<div align="center" style="margin-bottom: 10px;">
 		<form>
 			<input type="hidden" name="boardId" class="boardId" value="${list.boardId}"/>
 			<input type="hidden" name="userId" class="userId" value="${user.userId}"/>

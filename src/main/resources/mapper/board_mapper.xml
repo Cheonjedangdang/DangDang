@@ -49,11 +49,12 @@
 		       M.DOWN,
 		       M.TIME,
 		       U.NICKNAME,
-		       M.HIT
+		       M.HIT,
+          	   (SELECT COUNT(*) FROM BOARDCOMMENT WHERE M.BOARDID = BOARDID) AS COMMENT_CNT
 		FROM BOARDUSER U, BOARDMAIN M, BOARDCATEGORY C
 		WHERE U.USERID = M.USERID AND
 		      C.BOARDCATEGORYID = M.CATEGORYID
-		ORDER BY HIT DESC
+	    ORDER BY HIT ASC
  	</select>
  	<select id="selectAll" resultType="com.dangdangcompany.dangdang.main.dto.BoardDTO">
  		SELECT * FROM BOARDMAIN

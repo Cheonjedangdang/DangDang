@@ -59,7 +59,7 @@
 								<td>
 									<span style="color: gray;">[${item.name}]</span>
 								</td>
-								<td><a style="text-decoration: none;" href="titleClick?boardId=${item.boardId}">${item.title} &nbsp;&nbsp;<span style="color:#0000ff">[${item.hit}]</span></a></td>
+								<td><a style="text-decoration: none;" href="titleClick?boardId=${item.boardId}">${item.title} &nbsp;&nbsp;<span style="color:#0000ff">[${item.comment_cnt}]</span></a></td>
 								<td>${item.nickname}</td>
 							</tr>
 						</c:forEach>

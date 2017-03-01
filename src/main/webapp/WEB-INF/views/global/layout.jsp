@@ -15,6 +15,7 @@
 		<script src="https://cdn.jsdelivr.net/sweetalert2/6.2.1/sweetalert2.min.js"></script>
 		<script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/header.css"/>">
+		<script type="text/javascript" src="<c:url value="/resources/js/moment.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/resources/js/comment.js"/>"></script>
 		<decorator:head/>
       <title><decorator:title default="당당 ~ DangDang~"/></title>

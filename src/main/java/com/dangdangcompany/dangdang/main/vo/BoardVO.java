@@ -14,6 +14,7 @@ public class BoardVO {
 	private Timestamp time;
 	private String nickname;
 	private int hit;
+	private int comment_cnt;
 	public BoardVO(){}
 	public BoardVO(int boardId, int categoryId, String userId, String title, String content, int up, int down,
 			Timestamp time, String nickname, int hit, String name) {
@@ -96,6 +97,13 @@ public class BoardVO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getComment_cnt() {
+		return comment_cnt;
+	}
+	public void setComment_cnt(int comment_cnt) {
+		this.comment_cnt = comment_cnt;
 	}
 	@Override
 	public String toString() {
