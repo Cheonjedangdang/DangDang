@@ -1,5 +1,6 @@
 package com.dangdangcompany.dangdang.main.service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import org.slf4j.Logger;
@@ -81,7 +82,14 @@ public class BoardService {
 		boardDao.hitUpdate(vo);
 	}
 	public ArrayList<BoardVO> categoryBoard3(){
-		logger.info("{}",boardDao.selectCategory3());
-		return boardDao.selectCategory3();
+		ArrayList<BoardVO> list = boardDao.selectCategory3();
+
+		for(BoardVO vo : list)
+		{
+			logger.info("{}", vo);
+		}
+		
+		
+		return list;
 	}
 }

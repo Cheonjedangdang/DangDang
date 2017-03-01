@@ -39,7 +39,21 @@
  		SELECT * FROM BOARDUSER U, BOARDMAIN M WHERE U.USERID = M.USERID AND M.CATEGORYID = #{param1} ORDER BY TIME DESC
  	</select>
  	<select id="selectCategory3" resultType="com.dangdangcompany.dangdang.main.vo.BoardVO">
- 		SELECT * FROM BOARDUSER U, BOARDMAIN M WHERE U.USERID = M.USERID ORDER BY TIME DESC
+ 		SELECT M.USERID,
+		       M.BOARDID,
+		       C.NAME,
+		       M.CATEGORYID,
+		       M.TITLE,
+		       M.CONTENT,
+		       M.UP,
+		       M.DOWN,
+		       M.TIME,
+		       U.NICKNAME,
+		       M.HIT
+		FROM BOARDUSER U, BOARDMAIN M, BOARDCATEGORY C
+		WHERE U.USERID = M.USERID AND
+		      C.BOARDCATEGORYID = M.CATEGORYID
+		ORDER BY HIT DESC
  	</select>
  	<select id="selectAll" resultType="com.dangdangcompany.dangdang.main.dto.BoardDTO">
  		SELECT * FROM BOARDMAIN

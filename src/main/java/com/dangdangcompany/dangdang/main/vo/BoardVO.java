@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class BoardVO {
 	private int boardId;
 	private int categoryId;
+	private String name;
 	private String userId;
 	private String title;
 	private String content;
@@ -15,7 +16,7 @@ public class BoardVO {
 	private int hit;
 	public BoardVO(){}
 	public BoardVO(int boardId, int categoryId, String userId, String title, String content, int up, int down,
-			Timestamp time, String nickname, int hit) {
+			Timestamp time, String nickname, int hit, String name) {
 		super();
 		this.boardId = boardId;
 		this.categoryId = categoryId;
@@ -27,6 +28,7 @@ public class BoardVO {
 		this.time = time;
 		this.nickname = nickname;
 		this.hit = hit;
+		this.name = name;
 	}
 	public int getBoardId() {
 		return boardId;
@@ -88,11 +90,17 @@ public class BoardVO {
 	public void setHit(int hit){
 		this.hit = hit;
 	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
-		return "BoardVO [boardId=" + boardId + ", categoryId=" + categoryId + ", userId=" + userId + ", title=" + title
-				+ ", content=" + content + ", up=" + up + ", down=" + down + ", time=" + time + ", nickname=" + nickname
-				+ ", hit=" + hit + "]";
+		return "BoardVO [boardId=" + boardId + ", categoryId=" + categoryId + ", name=" + name
+				+ ", userId=" + userId + ", title=" + title + ", content=" + content + ", up=" + up + ", down=" + down
+				+ ", time=" + time + ", nickname=" + nickname + ", hit=" + hit + "]";
 	}
-	
 }

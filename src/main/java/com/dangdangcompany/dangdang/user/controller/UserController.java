@@ -61,8 +61,12 @@ public class UserController {
 	
 	@RequestMapping(value="login", method = RequestMethod.POST)
 	@ResponseBody
-	public HashMap<String, Object> login(UserDTO user, HttpSession hs)
-	{
+	public HashMap<String, Object> login(HttpSession hs, HttpServletRequest request) {
+		
+		UserDTO user = new UserDTO();
+		user.setUserId(request.getParameter("userId"));
+		user.setUserPw(request.getParameter("userPw"));
+		
 		boolean result = false;
 		result = userService.login(user.getUserId(), user.getUserPw());
 
@@ -77,6 +81,6 @@ public class UserController {
 	@RequestMapping("logout")
 	public String logout(HttpSession hs){
 		hs.invalidate();
-		return "home";
+		return "redirect:home";
 	}
 }

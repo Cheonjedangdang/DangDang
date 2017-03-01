@@ -17,9 +17,11 @@
 				<label for="title-form">제목</label>  <input type="text" id="title-form" name="title" class="form-control" style="width: 90%;"/>
 			</div>
 			<div id="summernote"></div>
-			첨부파일 <input type="text" name="file"/>
+			<!-- <h5>첨부파일</h5> <input type="file" name="file"/> -->
 			<input type ="hidden" name="categoryId" value="${categoryId}"/>
-			<input type = "button" class="btnc" value="작성완료" />
+			<div class="pull-right">
+				<input type = "button" class="btnc form-control" value="작성완료" />
+			</div>
 		</form>
 	
 	<script type="text/javascript">	

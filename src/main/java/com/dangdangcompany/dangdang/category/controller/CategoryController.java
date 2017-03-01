@@ -32,4 +32,10 @@ private static final Logger logger = LoggerFactory.getLogger(CategoryController.
 	public HashMap<String, Object> gameCategory(){
 		return SimpleHashMap.newInstance().put("list", categoryService.CategoryGameList());
 	}
+	
+	@RequestMapping(value="webtoonCategory", method= RequestMethod.POST)
+	@ResponseBody
+	public HashMap<String, Object> webtoonCategory(){
+		return SimpleHashMap.newInstance().put("list", categoryService.CategoryWebtoonList());
+	}
 }

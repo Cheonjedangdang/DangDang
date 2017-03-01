@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div align="center">
+	<hr>
+		Copyright <b>DANGDANG</b> Communications. All rights reserved. Mail to wkdtmd789@naver.com
+	</div>
 </body>
 </html>

@@ -26,4 +26,7 @@ public class CategoryService {
 	public CategoryDTO getCategoryDetail(int categoryId) {
 		return categoryDao.select(categoryId);
 	}
+	public ArrayList<CategoryDTO> CategoryWebtoonList() {
+		return categoryDao.selectType(3);
+	}
 }

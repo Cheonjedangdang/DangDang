@@ -22,5 +22,17 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	$.ajax({
+		url : '/webtoonCategory',
+		type : 'post',
+		data:{},
+		success : function(response){
+			$.each(response.list,function(index,data){
+				$('.menu4').append('<li><a href=/boardList?categoryId='+data.boardcategoryId+'>'+data.name+'</a></li>');
+			
+			});
+		}
+	});
 });
 
